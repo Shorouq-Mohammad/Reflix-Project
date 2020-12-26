@@ -16,13 +16,13 @@ export default class App extends Component {
           { id: 3, isRented: false, title: "The Sword in the Stone", year: 1963, img: "https://www.disneyinfo.nl/images/laserdiscs/229-1-AS-front.jpg", descrShort: "Arthur is a young boy who just wants to be a knight's squire. Alas, he is dubbed 'Wart' early on, and it was all downhill from there for a while. On a hunting trip he falls in on Merlin, literally. Merlin is a possibly-mentally-unstable-and-ethically-dubious Wizard that turns Arthur into a literate, at-one-point harassed squirrel. Watch to find out what the heck that means." },
           { id: 4, isRented: false, title: "Beauty and the Beast", year: 2016, img: "https://images-na.ssl-images-amazon.com/images/I/51ArFYSFGJL.jpg", descrShort: "Basically the same as the original, except now Hermi-- Emma Wattson plays Belle, fittingly so some would say, given how actively progressive she is regarding women's rights. Rumor has it that in the bonus scenes she whips out a wand and turns Gaston into a toad, but in order to watch those scenes you need to recite a certain incantation." }
         ],
-      users: {
+      users: localStorage.usersReflix ? JSON.parse(localStorage.usersReflix) : {
         0: {name: "Guest", rented: [], budget: 0, img:"https://img.russelloliver.co.uk/270-_-406-_-70-_-cdn.clipart.email/d7ede620146207af8cd0210331c23545_hip-human-behavior-sleeve-silhouette-png-download-32004809-_3200-4809.png"},
         1: {name: "Sheldon", rented: [], budget: 10, img:"https://res.cloudinary.com/dbuhagj9e/image/upload/v1608927064/7gjkfigguqchh044f32p15gv90-21eb879a1eb05cb977ade0d80dee314c_xhg8cs.png"},
         2: {name: "Leonard", rented: [], budget: 10, img:"https://res.cloudinary.com/dbuhagj9e/image/upload/v1608927070/johnny-galecki-leonard-hofstadter-the-big-bang-theory-penny-sheldon-cooper-the-big-bang-theory-6bb4c4401b8c02aeca9cee4c1d6c0e32_zyixa9.png"},
         3: {name: "Penny", rented: [], budget: 10, img:"https://www.novelties-direct.co.uk/images/P/SC620.jpg"}
       },
-      currentUserID: 0
+      currentUserID: localStorage.currentUserIDReflix || 0
     }
   }
 
@@ -48,10 +48,12 @@ export default class App extends Component {
     this.setState({
         users: users
     })
+    localStorage.usersReflix = JSON.stringify(users) 
   }
 
   changeUser=(userId)=>{
     this.setState({currentUserID: userId})
+    localStorage.currentUserIDReflix = userId
   }
 
   render() {
