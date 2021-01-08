@@ -1,6 +1,6 @@
 # Reflix Project
 
-<img src="https://res.cloudinary.com/dbuhagj9e/image/upload/v1608837326/5fe4e7db56219_z1gnmb.png" alt="logo" width="50%" style="margin: 0 auto;" />
+<img src="https://res.cloudinary.com/dbuhagj9e/image/upload/v1608837326/5fe4e7db56219_z1gnmb.png" alt="logo" width="20%"/>
 
 Reflix is a Netflix-like Project for renting movies. Data is also persisted with LocalStorage.
 
@@ -18,7 +18,7 @@ Displays available movies, with the ability to rent/unrent (if budget allows) a 
 
 <img src="./catalog.png" width="70%"/>
 <img src="./catalog2.png" width="70%"/>
-<img src="./search.png" width="70%"/>
+<img src="./seach.png" width="70%"/>
 
 ### 🎥 Movie Details
 
